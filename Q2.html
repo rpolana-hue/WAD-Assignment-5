@@ -1,0 +1,56 @@
+<html>
+<head>
+    <title>Quiz</title>
+    <script type="text/javascript">
+        function checkAnswer(questionNumber) {
+            var userAns;
+            var correctAns;
+            var resultId;
+            if(questionNumber==1) {
+                userAns=quizForm.ans1.value;
+                correctAns="Web Application Development";
+                resultId="result1";
+            }
+            else if(questionNumber==2){
+                userAns=quizForm.ans2.value;
+                correctAns="JavaScript";
+                resultId="result2";
+            }
+            else if(questionNumber==3){
+                userAns=quizForm.ans3.value;
+                correctAns="HTTP";
+                resultId="result3";
+            }
+            if(userAns.toLowerCase()==correctAns.toLowerCase()) {
+                document.getElementById(resultId).innerHTML="Correct!";
+            }
+            else{
+                document.getElementById(resultId).innerHTML="Incorrect. The correct answer is: " + correctAns;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Quiz</h1>
+    <form name="quizForm">
+        <p>
+            What does WAD stand for?<br>
+            Answer: <input type="text" name="ans1" />
+            <input type="button" value="Submit" onclick="checkAnswer(1)" /><br>
+            <span id="result1"></span>
+        </p>
+        <p>
+            Which language is commonly used for client-side scripting in web apps?<br>
+            Answer: <input type="text" name="ans2" />
+            <input type="button" value="Submit" onclick="checkAnswer(2)" /><br>
+            <span id="result2"></span>
+        </p>
+        <p>
+           What protocol is used to transfer data on the web?<br>
+            Answer: <input type="text" name="ans3" />
+            <input type="button" value="Submit" onclick="checkAnswer(3)" /><br>
+            <span id="result3"></span>
+        </p>
+    </form>
+</body>
+</html>
